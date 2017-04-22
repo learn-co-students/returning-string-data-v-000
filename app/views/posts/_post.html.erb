@@ -1,2 +1,16 @@
 <h1><%= post.id %>: <%= post.title %></h2>
-<div><%= truncate post.description %></div>
+<div id="body-<%= post.id %>"><%= truncate post.description %></div>
+<button class="js-more", data-id="<%= post.id %>">More...</button>
+
+<br>
+<div id="title-<%= post.id %>"></div>
+<button class="js-title", data-id="<%= post.id %>", data-title="<%= post.title %>">Show title again</button>
+
+<br>
+<div id="author-<%= post.id  %>"></div>
+<button class="js-author", data-id="<%= post.id %>", data-author="<%= post.author.name %>">Show Author again</button>
+
+<br>
+<div id="author-rev-<%= post.id %>"></div>
+<button class="js-yresim", data-id="<%= post.id %>", data-yresim="<%= post.author.name.upcase.reverse  %>">Author cap back: </button>
+<hr>
