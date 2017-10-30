@@ -20,8 +20,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.save
+    if @post.save 
     redirect_to post_path(@post)
+    else
+    render 'posts/new'
+    end
   end
 
   def edit
