@@ -1,0 +1,58 @@
+<% @posts.each do |post| %>
+  <%= render partial: "post", locals: {post: post} %>
+<% end %>
+ 
+<script type="text/javascript" charset="utf-8">
+$(function(){
+
+  $(".js-more").on("click", function(){
+      // get the id from data attribute
+      // document.getElementsByClassName('js-more')[0].dataset
+      // to see any data attribute you have assigned with 'data-"attribute-name"'
+      // DOMStringMap {id: "8", author: "Stephen King", title: "Something about Democrats"}
+      // document.getElementsByClassName("js-more")[0].dataset.author
+      // "Stephen King"
+      
+    var id = $(this).data("id");
+    var title = $(this).data("title");
+    var author = $(this).data("author");
+    var yresim = $(this).data("yresim");
+
+    $.get("/posts/" + id + "/body", function(data) {
+
+      $("#body-" + id).text(data);
+      $("#body-" + title).text(data);
+      $("#body-" + author).text(data);
+      $("#body-" + yresim).text(data);
+    });
+  })
+  
+  $(".js-author").on("click", function(){
+    var id = $(this).data("id");
+    var author = $(this).data("author");
+
+    $.get("/posts/" + id + "/body", function(data) {
+       $("#author-" + id).text(author);
+    });
+  });
+
+  $(".js-title").on("click", function(){
+    var id = $(this).data("id");
+    var title = $(this).data("title");
+
+    $.get("/posts/" + id + "/body", function(data) {
+       $("#title-" + id).text(title);
+    });
+  }); 
+
+  $(".js-yresim").on("click", function(){
+    var id = $(this).data("id");
+    var yresim = $(this).data("yresim");
+
+    $.get("/posts/" + id + "/body", function(data) {
+      $("#author-rev-" + id).text(yresim);
+    });
+  });
+
+})
+</script>

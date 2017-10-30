@@ -1,3 +1,63 @@
 <% @posts.each do |post| %>
   <%= render partial: "post", locals: {post: post} %>
 <% end %>
+ 
+<!-- 
+--plan a route to a controller action, for ajax request to hit
+--configure that controller action to render :plain text
+--test it, make sure you get plain text at that url: '/posts/:id/body'
+
+--in a partial for index view, create a button with class="js-***"
+--*** is any word you want, prefixed by js-
+-- this js-*** class will be used to identify the button, so ajax can 'listen' for an .on("click") event
+
+in a similar vein, we will create a <div> with an id, so that ajax knows where to put the data it receives from its request. In this case, it is the :plain text data that we set up in our custom routed controller action in step 1.
+
+--common naming convention for css selectors intended for javascript
+--add 'data-' attribute, using object's id:  data-id='object_id'
+--ajax hijack button via listening for 'onclick' event
+
+
+--assign variables to $(this).data("whatever-attribute-you-named")
+--ajax get request to our planned route
+
+ -->
+<script type="text/javascript" charset="utf-8">
+$(function(){
+  $(".js-more").on("click", function(){
+    var id = $(this).data("id")
+    $.get("/posts/" + id + "/body", function(data) {
+      $("#body-" + id).text(data)
+    })
+  })
+
+  $(".js-title").on("click", function(){
+    var id = $(this).data("id")
+    var title = $(this).data("title")
+    $.get("/posts/" + id + "/body", () => $("#title-" + id).text(title))
+  }) 
+
+  $(".js-author").on("click", function(){
+    var id = $(this).data("id");
+    var author = $(this).data("author")
+    $.get("/posts/" + id + "/body", () => $("#author-" + id).text(author))
+  })
+
+  $(".js-yresim").on("click", function(){
+    var id = $(this).data("id");
+    var yresim = $(this).data("yresim");
+    $.get("/posts/" + id + "/body", () => $("#author-rev-" + id).text(yresim))
+  })
+
+  $(".js-all").on("click", function(){
+    var id = $(this).data("id")
+    var author = $(this).data("author")
+    var title = $(this).data("title")
+    var description = $(this).data("description")
+
+    $.get("/posts/" + id, function(data){
+      $("#all-data-" + id).html(data)
+    })
+  })
+})  
+</script>
