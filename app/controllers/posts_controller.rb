@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    render 'posts/show.html.erb', layout: false
   end
 
   def new

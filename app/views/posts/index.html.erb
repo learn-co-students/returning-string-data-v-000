@@ -25,34 +25,39 @@ in a similar vein, we will create a <div> with an id, so that ajax knows where t
 <script type="text/javascript" charset="utf-8">
 $(function(){
   $(".js-more").on("click", function(){
-    var id = $(this).data("id");
+    var id = $(this).data("id")
     $.get("/posts/" + id + "/body", function(data) {
-      $("#body-" + id).text(data);
-    });
-  }); 
+      $("#body-" + id).text(data)
+    })
+  })
 
   $(".js-title").on("click", function(){
-    var id = $(this).data("id");
-    var title = $(this).data("title");
-    $.get("/posts/" + id + "/body", function(data) {
-      $("#title-" + id).text(title);
-    });
-  }); 
+    var id = $(this).data("id")
+    var title = $(this).data("title")
+    $.get("/posts/" + id + "/body", () => $("#title-" + id).text(title))
+  }) 
 
   $(".js-author").on("click", function(){
     var id = $(this).data("id");
-    var author = $(this).data("author");
-    $.get("/posts/" + id + "/body", function(data) {
-      $("#author-" + id).text(author);
-    });
-  }); 
+    var author = $(this).data("author")
+    $.get("/posts/" + id + "/body", () => $("#author-" + id).text(author))
+  })
 
   $(".js-yresim").on("click", function(){
     var id = $(this).data("id");
     var yresim = $(this).data("yresim");
-    $.get("/posts/" + id + "/body", function(data) {
-      $("#author-rev-" + id).text(yresim);
-    });
-  }); 
-});  
+    $.get("/posts/" + id + "/body", () => $("#author-rev-" + id).text(yresim))
+  })
+
+  $(".js-all").on("click", function(){
+    var id = $(this).data("id")
+    var author = $(this).data("author")
+    var title = $(this).data("title")
+    var description = $(this).data("description")
+
+    $.get("/posts/" + id, function(data){
+      $("#all-data-" + id).html(data)
+    })
+  })
+})  
 </script>
