@@ -2,9 +2,9 @@
 
 ## Objectives
 
-  * Return plain strings as HTTP responses
-  * Explain how the Internet is really just sending strings!
-  * Replace a DIV with a string fetched over HTTP
+  * Return plain strings as HTTP responses.
+  * Explain how the Internet is really just sending strings.
+  * Replace a DIV with a string fetched over HTTP.
 
 ## Lesson
 
