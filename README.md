@@ -5,7 +5,7 @@
   * Return plain strings as HTTP responses
   * Explain how the Internet is really just sending strings!
   * Replace a DIV with a string fetched over HTTP
-
+ da
 ## Lesson
 
 As developers, we do our best to hide it, but all of the Internet is
