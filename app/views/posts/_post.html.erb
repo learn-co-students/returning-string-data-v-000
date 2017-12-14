@@ -1,2 +1,20 @@
 <h1><%= post.id %>: <%= post.title %></h2>
-<div><%= truncate post.description %></div>
+<div id="body-<%= post.id %>"><%= truncate post.description %></div>
+
+<button class="js-more" data-id="<%= post.id %>">More...</button>
+
+<% @posts.each do |post| %>
+  <%= render partial: "post", locals: {post: post} %>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-more").on('click', function() {
+    // get the id from the data attribute
+    var id = $(this).data("id");
+    $.get("/posts/" + id + "/body", function(data) {
+      alert(data);
+    });
+  });
+});
+</script>
