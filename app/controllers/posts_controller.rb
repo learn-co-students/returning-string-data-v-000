@@ -8,6 +8,11 @@ class PostsController < ApplicationController
   def show
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
   def new
     @post = Post.new
   end
@@ -31,6 +36,7 @@ private
   def set_post
     @post = Post.find(params[:id])
   end
+
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
