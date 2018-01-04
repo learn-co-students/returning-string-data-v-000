@@ -1,6 +1,15 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
+  def body
+    post = Post.find(params[:id])
+    # Normally, in a RESTful
+    # action, we allow the controller to implicitly render a template with the
+    # same name as the action. Here, however, we want to explicitly render
+    # plain text, so we call render with the :plain option.
+    render plain: post.description
+  end
+
   def index
     @posts = Post.all
   end
