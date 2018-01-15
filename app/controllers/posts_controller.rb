@@ -12,6 +12,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+  
   def create
     @post = Post.create(post_params)
     @post.save
