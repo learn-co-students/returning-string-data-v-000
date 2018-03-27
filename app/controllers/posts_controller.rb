@@ -26,6 +26,14 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  #this route is not useful to HTML portion of website, this is an API endpoint
+  def body
+    post = set_post
+    #instead of implicitly rendering a template w/ same name as action,
+    #we want to explicitly render plain text
+    render plain: post.description
+  end
+
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
