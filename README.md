@@ -1,4 +1,4 @@
-# Returning String Data
+# Returning String Datasd
 
 ## Objectives
 
@@ -69,7 +69,7 @@ files, or nothing at all. Read more about `render` in the [Layouts and
 Rendering](http://guides.rubyonrails.org/layouts_and_rendering.html#using-render) RailsGuide.
 
 Now that we have that action, we can hit it by browsing to
-`/posts/:id/body` and see that we are just rendering plain text. 
+`/posts/:id/body` and see that we are just rendering plain text.
 
 **Hint:** The `/posts` page outputs the post `id` as part of the `<h1>`
 tag, so you can easily get an `id` to use to test this out.
@@ -209,4 +209,3 @@ without doing a page refresh? Certainly we wouldn't want to make a bunch
 of separate requests to endpoints like `/post/:id/body` and
 `/post/:id/title` and `/post/:id/author`, would we? There has to be a
 better way!
-
