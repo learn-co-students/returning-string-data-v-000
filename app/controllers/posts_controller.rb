@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    # binding.pry
   end
 
   def new
@@ -26,6 +27,11 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
@@ -34,6 +40,7 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
+    binding.pry
     params.require(:post).permit(:title, :description)
   end
 end
