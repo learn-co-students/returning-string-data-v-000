@@ -1,2 +1,7 @@
 <h1><%= post.id %>: <%= post.title %></h2>
-<div><%= truncate post.description %></div>
+
+<!-- NOTE : Adding id so can identify the div to be updated through the button -->
+<div id="body-<%= post.id %>"><%= truncate post.description %></div>
+
+<!-- NOTE : Using "js-" to denote JS Selector and sending post-id because need that info -->
+<button class="js-more" data-id="<%= post.id %>">More...</button>
