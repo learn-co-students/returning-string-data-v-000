@@ -35,4 +35,4 @@ post3 = <<-POST3
 
 Post.create(title: "Something about Democrats", description: post1, author: author1)
 Post.create(title: "SPAM SPAM SPAM", description: post2, author: author2)
-post = Post.create(title: "Links! Click Links!", description: post3, author: author3)
+Post.create(title: "Links! Click Links!", description: post3, author: author3)

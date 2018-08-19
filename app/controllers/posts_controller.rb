@@ -1,3 +1,4 @@
+require 'pry'
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
@@ -24,6 +25,13 @@ class PostsController < ApplicationController
   def update
     @post.update(post_params)
     redirect_to post_path(@post)
+  end
+
+  def body
+    post = Post.find(params[:id])
+
+    #render plain text, not default template
+    render plain: post.description 
   end
 
 private
