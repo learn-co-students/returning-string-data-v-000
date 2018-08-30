@@ -1,2 +1,4 @@
 <h1><%= post.id %>: <%= post.title %></h2>
-<div><%= truncate post.description %></div>
+<div id="body-<%= post.id %>"><%= truncate post.description %></div>
+<!-- each div has an id of body id so it's dynamic and updates with the post id-->
+<button class="js-more" data-id="<%= post.id %>">More...</button>

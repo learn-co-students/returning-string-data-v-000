@@ -1,3 +1,25 @@
 <% @posts.each do |post| %>
   <%= render partial: "post", locals: {post: post} %>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-more").on('click', function() {
+    var id = $(this).data("id");
+    $.get("/posts/" + id + "/body", function(data) {
+      // Replace text of body-id div
+      $("#body-" + id).text(data);
+    });
+  });
+});
+</script>
+
+<!--We simply use the # selector to find the right body-id, and call
+.text(data) to replace the text of the div with what we got back
+from our API call.-->
+
+<!--We've set up a click listener for all our .js-more buttons, and used
+the .get() method to make an AJAX request to our /posts/:id/body
+route using the id we stored in the data-id attribute on the button.-->
+
+<!-- refresh the page that has a more button, clicks and then more show-->
