@@ -1,11 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
-  def body
-    post = Post.find(params[:id])
-    render plain: post.description
-  end
-  
   def index
     @posts = Post.all
   end
@@ -29,6 +24,11 @@ class PostsController < ApplicationController
   def update
     @post.update(post_params)
     redirect_to post_path(@post)
+  end
+
+  def body
+    @post = Post.find(params[:id])
+    render plain: post.description #want to explicitly render plain text
   end
 
 private
