@@ -14,11 +14,16 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    # @post = Post.new
+    # @post.title = params[:title]
+    # @post.description = params[:description]
     @post.save
     redirect_to post_path(@post)
   end
 
   def edit
+    @post = Post.find(params[:id])
+    # redirect_to post_path(@post)
   end
 
   def update
