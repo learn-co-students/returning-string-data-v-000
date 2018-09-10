@@ -6,10 +6,12 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
     @post = Post.new
+    @button = "Submit Post"
   end
 
   def create
@@ -18,7 +20,14 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
   def edit
+    @post = Post.find(params[:id])
+    @button = "Update Post"
   end
 
   def update
