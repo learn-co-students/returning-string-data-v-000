@@ -5,6 +5,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
   def show
   end
 
@@ -13,6 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @post = Post.create(post_params)
     @post.save
     redirect_to post_path(@post)
