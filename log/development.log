@@ -1508,3 +1508,447 @@ Processing by PostsController#body as */*
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
   Rendered text template (0.0ms)
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 5]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 7]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 3]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-09-27 22:22:28.653570"], ["updated_at", "2018-09-27 22:22:28.653570"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ariana Huffington"], ["created_at", "2018-09-27 22:22:28.656222"], ["updated_at", "2018-09-27 22:22:28.656222"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Horse Ebooks"], ["created_at", "2018-09-27 22:22:28.658521"], ["updated_at", "2018-09-27 22:22:28.658521"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Something about Democrats"], ["description", "  Last night I dreamt there is more to life than to bully friends.\n  What has that got to do with Democrats, you probably wonder...\n  The answer is here. Right here. Back in school my hair was silly.\n  Nevermind about the details, but... In a nut-shell: And still,\n  it was strange. Using Google, I found a 12-sided dice.\n  Which would be nothing special but...\n"], ["author_id", 4], ["created_at", "2018-09-27 22:22:28.663969"], ["updated_at", "2018-09-27 22:22:28.663969"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "SPAM SPAM SPAM"], ["description", "  It occurred to me that no matter what cards you are dealt,\n  you need to enjoy the small joys. How is this related to Spam, you ask.\n  Fair enough. OK, I will tell you something here now...\n  Sometime around last year I loved movies. Yeah, just what it sounds like.\n  In a nut-shell: And still, it was strange. I collided with the powers of a my computer,\n  broken and gray. And here's why this matters...\n"], ["author_id", 5], ["created_at", "2018-09-27 22:22:28.666153"], ["updated_at", "2018-09-27 22:22:28.666153"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Links! Click Links!"], ["description", "  Last night I dreamt we simply need to realize to be so competitive.\n  Does the responsibility lie with Links, you probably wonder...\n  The answer is here. Right here. About the time I broke up with my\n  ex I was totally into music. Whatever. So that's that.\n  But something wasn't right. I stumbled upon a giant banana.\n"], ["author_id", 6], ["created_at", "2018-09-27 22:22:28.668859"], ["updated_at", "2018-09-27 22:22:28.668859"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2018-09-27 16:22:38 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2018-09-27 16:22:49 -0600
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (0.4ms)
+  Rendered posts/_post.html.erb (0.1ms)
+  Rendered posts/_post.html.erb (0.1ms)
+  Rendered posts/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 325ms (Views: 319.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/8/body" for ::1 at 2018-09-27 16:25:25 -0600
+Processing by PostsController#body as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 12ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for ::1 at 2018-09-27 16:30:05 -0600
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (0.8ms)
+  Rendered posts/_post.html.erb (0.1ms)
+  Rendered posts/_post.html.erb (0.1ms)
+  Rendered posts/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/8/body" for ::1 at 2018-09-27 16:30:07 -0600
+Processing by PostsController#body as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/9/body" for ::1 at 2018-09-27 16:30:11 -0600
+Processing by PostsController#body as */*
+  Parameters: {"id"=>"9"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2018-09-27 16:32:19 -0600
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (0.7ms)
+  Rendered posts/_post.html.erb (0.1ms)
+  Rendered posts/_post.html.erb (0.1ms)
+  Rendered posts/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/8/body" for ::1 at 2018-09-27 16:32:20 -0600
+Processing by PostsController#body as */*
+  Parameters: {"id"=>"8"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/9/body" for ::1 at 2018-09-27 16:32:22 -0600
+Processing by PostsController#body as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 8]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 10]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 4]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "authors" WHERE "authors"."id" = ?  [["id", 6]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-09-27 22:34:19.952839"], ["updated_at", "2018-09-27 22:34:19.952839"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ariana Huffington"], ["created_at", "2018-09-27 22:34:19.956851"], ["updated_at", "2018-09-27 22:34:19.956851"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Horse Ebooks"], ["created_at", "2018-09-27 22:34:19.959384"], ["updated_at", "2018-09-27 22:34:19.959384"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Something about Democrats"], ["description", "  Last night I dreamt there is more to life than to bully friends.\n  What has that got to do with Democrats, you probably wonder...\n  The answer is here. Right here. Back in school my hair was silly.\n  Nevermind about the details, but... In a nut-shell: And still,\n  it was strange. Using Google, I found a 12-sided dice.\n  Which would be nothing special but...\n"], ["author_id", 7], ["created_at", "2018-09-27 22:34:19.965528"], ["updated_at", "2018-09-27 22:34:19.965528"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "SPAM SPAM SPAM"], ["description", "  It occurred to me that no matter what cards you are dealt,\n  you need to enjoy the small joys. How is this related to Spam, you ask.\n  Fair enough. OK, I will tell you something here now...\n  Sometime around last year I loved movies. Yeah, just what it sounds like.\n  In a nut-shell: And still, it was strange. I collided with the powers of a my computer,\n  broken and gray. And here's why this matters...\n"], ["author_id", 8], ["created_at", "2018-09-27 22:34:19.967922"], ["updated_at", "2018-09-27 22:34:19.967922"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Links! Click Links!"], ["description", "  Last night I dreamt we simply need to realize to be so competitive.\n  Does the responsibility lie with Links, you probably wonder...\n  The answer is here. Right here. About the time I broke up with my\n  ex I was totally into music. Whatever. So that's that.\n  But something wasn't right. I stumbled upon a giant banana.\n"], ["author_id", 9], ["created_at", "2018-09-27 22:34:19.970790"], ["updated_at", "2018-09-27 22:34:19.970790"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/posts/8/edit" for ::1 at 2018-09-27 16:50:39 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 8]]
+Completed 404 Not Found in 15ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=8):
+  app/controllers/posts_controller.rb:38:in `set_post'
+
+
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (165.7ms)
+
+
+Started GET "/posts/8/edit" for ::1 at 2018-09-27 16:50:45 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 8]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=8):
+  app/controllers/posts_controller.rb:38:in `set_post'
+
+
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.2ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2018-09-27 16:50:49 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=1):
+  app/controllers/posts_controller.rb:38:in `set_post'
+
+
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.5ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.5ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (122.2ms)
+
+
+Started PUT "/__web_console/repl_sessions/e0f14aeda06c03a19f68f4f9c4666285" for ::1 at 2018-09-27 16:50:58 -0600
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 16:52:16 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered posts/_form.html.erb (7.6ms)
+  Rendered posts/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 160ms (Views: 159.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 16:52:27 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered posts/_form.html.erb (1.3ms)
+  Rendered posts/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:00:53 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+Redirected to http://localhost:3000/posts/11
+Completed 302 Found in 19ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/11" for ::1 at 2018-09-27 17:00:53 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 191ms (Views: 190.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:01:02 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+Redirected to http://localhost:3000/posts/11
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/11" for ::1 at 2018-09-27 17:01:02 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:01:10 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+Redirected to http://localhost:3000/posts/11
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/11" for ::1 at 2018-09-27 17:01:10 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:01:44 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+Redirected to http://localhost:3000/posts/11
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/11" for ::1 at 2018-09-27 17:01:44 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:01:50 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+Redirected to http://localhost:3000/posts/11
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/11" for ::1 at 2018-09-27 17:01:50 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/edit/11" for ::1 at 2018-09-27 17:02:54 -0600
+
+ActionController::RoutingError (No route matches [GET] "/posts/edit/11"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/admin/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/admin/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/admin/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.0ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (121.2ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:03:46 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+Redirected to http://localhost:3000/posts/11
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/11" for ::1 at 2018-09-27 17:03:47 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:04:28 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered posts/edit.html.erb within layouts/application (26.8ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x007f8c5a61aa38>:0x007f8c5a76d228>
+Did you mean?  @post):
+    12:   <% end %>
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :title, post[:title] %><br>
+    16:     <%= f.text_field :title %>
+    17:   </div>
+    18: 
+  app/views/posts/edit.html.erb:15:in `block in _app_views_posts_edit_html_erb___510432112094621676_70120394235520'
+  app/views/posts/edit.html.erb:1:in `_app_views_posts_edit_html_erb___510432112094621676_70120394235520'
+
+
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.1ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.9ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/admin/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (116.2ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2018-09-27 17:04:55 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered posts/_form.html.erb (2.1ms)
+  Rendered posts/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
