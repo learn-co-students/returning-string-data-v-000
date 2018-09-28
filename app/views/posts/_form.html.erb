@@ -9,19 +9,27 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% else %>
 
-  <div class="field">
+
+  <div class="field" id="title">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "title"%>
   </div>
 
-  <div class="field">
+  <div class="field" id="description">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <% if @edit_post%>
+    <div class="actions">
+      <%= f.submit "Update Post"%>
+    </div>
+  <%else%>
+    <div class="actions">
+      <%= f.submit "Submit Post"%>
+    </div>
+  <%end%>
 <% end %>
+<%end%>
