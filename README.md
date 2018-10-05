@@ -1,6 +1,6 @@
 # Returning String Data
 
-## Objectives
+## Objectives 
 
 - Return plain strings as HTTP responses
 - Explain how the Internet is really just sending strings!
