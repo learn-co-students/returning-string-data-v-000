@@ -7,7 +7,7 @@
     $(".js-more").on('click', function() {
       var id = $(this).data("id");
       $.get("/posts/" + id + "/body", function(data) {
-        alert(data);
+         $("#body-" + id).text(data);
       });
     });
   });
