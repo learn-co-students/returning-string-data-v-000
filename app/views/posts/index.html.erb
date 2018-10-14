@@ -2,15 +2,32 @@
   <%= render partial: "post", locals: {post: post} %>
 <% end %>
 
-
+<!-- Using Vanilla Javascript  -->
 <script type="text/javascript" charset="utf-8">
-$(function () {
-  $(".js-more").on('click', function() {
-    var id = $(this).data("id");
-    $.get("/posts/" + id + "/body", function(data) {
-      // Replace text of body-id div
-      $("#body-" + id).text(data);
-    });
-  });
-});
+(function(){
+  let buttons = document.querySelectorAll('.js-more');
+  buttons.forEach(function(button){
+    button.addEventListener('click', function(){
+      let id = button.getAttribute('data-id');
+      fetch(`/posts/${id}/body`, {
+        method: 'GET'
+      })
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(text) {
+        document.getElementById(`body-${id}`).textContent = text;
+      })
+    })
+  })
+})()
+// $(function () {
+//   $(".js-more").on('click', function() {
+//     var id = $(this).data("id");
+//     $.get("/posts/" + id + "/body", function(data) {
+//       // Replace text of body-id div
+//       $("#body-" + id).text(data);
+//     });
+//   });
+// });
 </script>
