@@ -1,0 +1,3 @@
+## removed from views/posts/show.html.erb
+<%= @post.author.name %>
+<%= @post.author.hometown %>
