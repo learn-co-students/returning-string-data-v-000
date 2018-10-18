@@ -5,11 +5,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def body
-    post = Post.find(params[:id])
-    render plain: post.description
-  end
-
   def show
   end
 
@@ -30,6 +25,15 @@ class PostsController < ApplicationController
     @post.update(post_params)
     redirect_to post_path(@post)
   end
+
+  # Normally, in a RESTful action, we allow the controller to implicitly render a template with the same name as the action
+  # explicitly render plain text with the :plain option
+
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
 
 private
   # Use callbacks to share common setup or constraints between actions.
