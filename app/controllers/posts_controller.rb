@@ -1,3 +1,5 @@
+require 'pry'
+
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
@@ -6,6 +8,9 @@ class PostsController < ApplicationController
   end
 
   def show
+# binding.pry
+  @post = Post.find_by_id(params[:id])
+  # @authors = Author.all
   end
 
   def new
@@ -25,6 +30,15 @@ class PostsController < ApplicationController
     @post.update(post_params)
     redirect_to post_path(@post)
   end
+
+  # Normally, in a RESTful action, we allow the controller to implicitly render a template with the same name as the action
+  # explicitly render plain text with the :plain option
+
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
 
 private
   # Use callbacks to share common setup or constraints between actions.
