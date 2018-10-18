@@ -1,3 +1,5 @@
+require 'pry'
+
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
@@ -6,6 +8,9 @@ class PostsController < ApplicationController
   end
 
   def show
+# binding.pry
+  @post = Post.find_by_id(params[:id])
+  # @authors = Author.all
   end
 
   def new
