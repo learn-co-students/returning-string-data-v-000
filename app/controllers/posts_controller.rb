@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :body]
 
   def index
     @posts = Post.all
@@ -26,6 +26,9 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def body
+    render plain: @post.description
+  end
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
