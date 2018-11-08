@@ -3,9 +3,16 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    binding.pry
+  end
+  
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
