@@ -1,9 +1,9 @@
 Post.destroy_all
 Author.destroy_all
 
-author1 = Author.create(name: "Stephen King")
-author2 = Author.create(name: "Ariana Huffington")
-author3 = Author.create(name: "Horse Ebooks")
+author1 = Author.create(name: "Stephen King", hometown: "Portland, Maine")
+author2 = Author.create(name: "Ariana Huffington", hometown: "Athens, Greece")
+author3 = Author.create(name: "Horse Ebooks", hometown: "Twitter")
 
 
 #this makes use of HEREDOCs, which you can read more about here, doc: https://en.wikipedia.org/wiki/Here_document
