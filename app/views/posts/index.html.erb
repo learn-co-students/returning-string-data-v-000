@@ -1,3 +1,18 @@
 <% @posts.each do |post| %>
   <%= render partial: "post", locals: {post: post} %>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    //Set up a click listener for all our js-more classes
+    $(".js-more").on('click', function(){
+      //storing the id
+      let id = $(this).data("id");
+      //Makes a AJAX request to our /posts/:id/body
+      $.get("/posts/"+ id +"/body", function(data){
+        //replace the text in the id body-id (i.e. body-1) with the data
+        $("#body-" + id).text(data);
+      });
+    });
+  });
+  </script>
