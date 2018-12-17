@@ -6,10 +6,12 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
     @post = Post.new
+    render partial: 'form'
   end
 
   def create
@@ -27,8 +29,8 @@ class PostsController < ApplicationController
   end
 
   def body
-    post = Post.find(params[:id])
-    render plain: post.description
+    @post = Post.find(params[:id])
+    render plain: @post.description
   end
 
 private
