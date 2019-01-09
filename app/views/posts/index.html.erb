@@ -8,7 +8,8 @@ $(function () {
     //get the id from the data attribute
     let id = $(this).data("id")
     $.get("/posts/" + id + "/body", function(data) {
-      alert(data)
+      // Replace text of body-id div
+      $("#body-" + id).text(data)
     })
   })
 })
