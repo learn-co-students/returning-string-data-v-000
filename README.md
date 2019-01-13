@@ -6,6 +6,17 @@
 - Explain how the Internet is really just sending strings!
 - Replace a DIV with a string fetched over HTTP
 
+#L1 - Setting up and consuming and API endpoint via example: Add the ability to load additional text of an individual post on /posts route without redirect to show path(aka AJAX)
+Changed Files:
+1.) config/routes 
+2.)posts_controller
+3.) _post.html.erb 
+4.) posts/index.html.erb
+
+
+
+
+
 ## Lesson
 
 As developers, we do our best to hide it, but all of the Internet is
