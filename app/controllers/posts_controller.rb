@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
+  #2) set up action for getting body of post as an API endpoint
+  def body 
+    post = Post.find(params[:id])
+    #render plain makes sure that plain text is rendered
+    render plain: post.description
+  end 
+
   def index
     @posts = Post.all
   end
