@@ -1,2 +1,7 @@
 <h1><%= post.id %>: <%= post.title %></h1>
+
+<!-- identifying the body with the id of a post. -->
 <div id="body-<%= post.id %>"><%= truncate post.description %></div>
+
+<!-- adds button -->
+<button class="js-more" data-id="<%= post.id %>">More...</button>
