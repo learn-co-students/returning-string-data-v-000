@@ -1,4 +1,4 @@
-# Returning String Data
+rake db:migrate RAILS_ENV=development# Returning String Data
 
 ## Objectives
 
