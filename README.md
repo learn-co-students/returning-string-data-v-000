@@ -46,7 +46,7 @@ body of the post.
 # ...
 get '/posts/:id/body', to: 'posts#body'
 ```
-
+changed!
 And in our controller:
 
 ```ruby
