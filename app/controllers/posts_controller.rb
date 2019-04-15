@@ -18,6 +18,11 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
   def edit
   end
 
@@ -25,6 +30,8 @@ class PostsController < ApplicationController
     @post.update(post_params)
     redirect_to post_path(@post)
   end
+
+
 
 private
   # Use callbacks to share common setup or constraints between actions.
