@@ -1508,3 +1508,5 @@ Processing by PostsController#body as */*
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
   Rendered text template (0.0ms)
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in execute at /home/learn/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in execute at /home/learn/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273)
