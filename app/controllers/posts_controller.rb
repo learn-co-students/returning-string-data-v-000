@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
-
+  
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+  #Here, however, we want to explicitly render plain text, so we call render with the :plain option.
+  
   def index
     @posts = Post.all
   end
