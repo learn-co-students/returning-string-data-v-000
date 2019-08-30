@@ -1,0 +1,4 @@
+let id = <%= @post.id %>
+let description = "<%=j(@post.description)%>"
+
+$(`#body-${id}`).text(description);
