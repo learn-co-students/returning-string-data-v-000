@@ -1,2 +1,16 @@
 <h1><%= post.id %>: <%= post.title %></h1>
 <div id="body-<%= post.id %>"><%= truncate post.description %></div>
+
+<button class="js-more" data-id="<%= post.id %>">More...</button>
+
+<script type="text/javascript">
+  $(function () {
+    $(".js-more").on('click', function () {
+      let id = $(this).data("id");
+      $.get("/posts/" + id + "/body", function (data) {
+        <!-- alert(data); -->
+        $("#body-" + id).text(data);
+      });
+    });
+  });
+</script>
