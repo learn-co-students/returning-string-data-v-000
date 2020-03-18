@@ -5,6 +5,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description #normally in RESTful action, controller implicity renders a template wit same name as action, here explictly render plain text
+  end                              #render has options for like including plain text, files, or northing at all   
+
   def show
   end
 
