@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  # Writing API end point
   def body
     post = Post.find(params[:id])
     render plan: post.description
